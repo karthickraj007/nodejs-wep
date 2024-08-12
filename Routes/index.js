@@ -70,7 +70,7 @@ router.get("/allusers",  async (req, res)=>{
     }
 })
 
-router.post("/addItem", token, async (req,res)=>{
+router.post("/addItem",  async (req,res)=>{
     try{
         const {name, description, createdat} = req.body
         const user = await userModel.create({
@@ -85,7 +85,7 @@ router.post("/addItem", token, async (req,res)=>{
     }
 })
 
-router.put("/updateItem/:id", token, async (req, res)=>{
+router.put("/updateItem/:id",  async (req, res)=>{
     try{
         const {id} = req.params
         const user = await userModel.findOne({_id : id})
@@ -104,7 +104,7 @@ router.put("/updateItem/:id", token, async (req, res)=>{
 
 })
 
-router.delete("/deleteItem/:id", token, async (req, res)=>{
+router.delete("/deleteItem/:id",  async (req, res)=>{
     try{
         const {id} = req.params
         const user = await userModel.findOne({_id : id})
@@ -122,7 +122,7 @@ router.delete("/deleteItem/:id", token, async (req, res)=>{
 })
 
 
-router.get("/search", token, async (req, res)=>{
+router.get("/search",  async (req, res)=>{
     try{
         const {name} = req.query
         console.log(name)
